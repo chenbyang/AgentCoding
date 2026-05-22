@@ -3,36 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chenbyang | GitHub 專案展示</title>
-  <meta name="description" content="chenbyang 的 GitHub 個人專案展示頁面，瀏覽所有公開儲存庫。">
+  <title>chenbyang | GitHub 專案展示 (Professional Light)</title>
+  <meta name="description" content="chenbyang 的 GitHub 個人專案展示頁面，採用專業、極致美感的淺色 SaaS 設計風格。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
     /* =====================================================================
-       CSS 設計系統 - SaaS Professional Light Mode
-       套用 ui-ux-pro-max-skill: Portfolio + SaaS (General) 色彩規範
+       CSS 設計系統 - Premium SaaS Professional Light Mode
        ===================================================================== */
     :root {
       /* 背景與層次 */
-      --bg-canvas:   #F4F6FB;
+      --bg-canvas:   #F8FAFC;
       --bg-surface:  #FFFFFF;
-      --bg-subtle:   #EEF1F8;
+      --bg-subtle:   #F1F5F9;
+      --bg-hover:    #F8FAFC;
 
-      /* 主色調 - Indigo Blue (信賴感 + 科技感) */
+      /* 主色調 - Indigo Blue (專業信賴 + 現代感) */
       --primary:        #4F46E5;
       --primary-hover:  #4338CA;
       --primary-light:  #EEF2FF;
       --primary-mid:    #818CF8;
-      --primary-glow:   rgba(79, 70, 229, 0.12);
+      --primary-glow:   rgba(79, 70, 229, 0.08);
 
-      /* 強調色 - 青綠 (數據 / 標籤) */
+      /* 強調色 - Cyan & Pink */
       --accent:         #0891B2;
       --accent-light:   #ECFEFF;
+      --pink:           #DB2777;
+      --pink-light:     #FDF2F8;
 
-      /* 文字層次 */
+      /* 文字顏色 */
       --text-primary:   #0F172A;
       --text-secondary: #334155;
       --text-muted:     #64748B;
@@ -41,27 +43,31 @@
       /* 邊框 */
       --border-base:    #E2E8F0;
       --border-strong:  #CBD5E1;
+      --border-focus:   #4F46E5;
 
-      /* 陰影系統 */
-      --shadow-xs:  0 1px 2px rgba(15, 23, 42, 0.06);
-      --shadow-sm:  0 1px 6px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04);
-      --shadow-md:  0 4px 16px rgba(15, 23, 42, 0.10), 0 1px 4px rgba(15, 23, 42, 0.06);
-      --shadow-lg:  0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(15, 23, 42, 0.08);
-      --shadow-xl:  0 20px 48px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.08);
-      --shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.2);
+      /* 陰影 */
+      --shadow-xs:  0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-sm:  0 2px 8px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.02);
+      --shadow-md:  0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -3px rgba(15, 23, 42, 0.04);
+      --shadow-lg:  0 20px 40px -10px rgba(15, 23, 42, 0.09), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+      --shadow-xl:  0 25px 50px -12px rgba(79, 70, 229, 0.12);
+      --shadow-focus: 0 0 0 4px rgba(79, 70, 229, 0.15);
 
+      /* 字型 */
       --font-display: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
       --font-body:    'Inter', 'Noto Sans TC', sans-serif;
       --font-mono:    'JetBrains Mono', monospace;
 
+      /* 圓角 */
       --radius-sm:  8px;
       --radius-md:  12px;
       --radius-lg:  18px;
       --radius-xl:  24px;
       --radius-full: 9999px;
 
+      /* 動畫 */
       --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-spring: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
     }
 
     /* ---- 基礎重設 ---- */
@@ -75,40 +81,81 @@
 
     body {
       background-color: var(--bg-canvas);
+      background-image: 
+        radial-gradient(rgba(148, 163, 184, 0.1) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
       color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 16px;
       line-height: 1.6;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--bg-canvas); }
     ::-webkit-scrollbar-thumb {
       background: var(--border-strong);
       border-radius: var(--radius-full);
+      border: 2px solid var(--bg-canvas);
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--primary-mid); }
 
     /* =====================================================================
-       導覽列 (Sticky Top Nav)
+       環境背景裝飾 (Ambient Glows)
+       ===================================================================== */
+    .ambient-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .glow-1 {
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(129, 140, 248, 0) 70%);
+      top: -150px;
+      left: -150px;
+      animation: float-glow-1 25s ease-in-out infinite alternate;
+    }
+    .glow-2 {
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(103, 232, 249, 0) 70%);
+      bottom: -150px;
+      right: -150px;
+      animation: float-glow-2 30s ease-in-out infinite alternate;
+    }
+    @keyframes float-glow-1 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(80px, 50px) scale(1.15); }
+    }
+    @keyframes float-glow-2 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-80px, -60px) scale(1.1); }
+    }
+
+    /* =====================================================================
+       導覽列 (Sticky Header)
        ===================================================================== */
     .site-nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(244, 246, 251, 0.88);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border-bottom: 1px solid var(--border-base);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
       padding: 0 clamp(20px, 4vw, 60px);
+      transition: var(--transition);
     }
 
     .nav-inner {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
-      height: 62px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -118,36 +165,38 @@
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
     }
 
     .nav-avatar {
-      width: 34px;
-      height: 34px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--primary-light);
+      box-shadow: var(--shadow-sm);
     }
 
     .nav-brand-text {
       font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.05rem;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
       color: var(--text-primary);
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
 
     .nav-github-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 18px;
+      padding: 10px 22px;
       background: var(--primary);
       color: #fff;
       font-family: var(--font-display);
@@ -155,89 +204,82 @@
       font-size: 0.875rem;
       border-radius: var(--radius-full);
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
-      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+      transition: var(--transition-spring);
     }
 
     .nav-github-btn:hover {
       background: var(--primary-hover);
-      box-shadow: 0 4px 16px rgba(79, 70, 229, 0.4);
-      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+      transform: translateY(-2px);
     }
 
     /* =====================================================================
        主要容器
        ===================================================================== */
     .app-container {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: clamp(30px, 4vw, 50px) clamp(16px, 3vw, 40px);
+      position: relative;
     }
 
     /* =====================================================================
-       Hero Section (個人介紹)
+       Hero Section (Bento Grid 佈局)
        ===================================================================== */
-    .hero-wrapper {
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: stretch;
-      margin-bottom: 30px;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
     }
 
-    /* 左側：Profile Card */
+    /* Bento Box: 個人資料卡 */
     .profile-card {
       background: var(--bg-surface);
-      border: 1px solid var(--border-base);
+      border: 1px solid rgba(226, 232, 240, 0.8);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-md);
-      padding: 36px 40px;
+      padding: 40px;
       display: flex;
-      gap: 30px;
+      gap: 32px;
       align-items: center;
       position: relative;
       overflow: hidden;
     }
 
-    /* 頂部裝飾漸層線 */
+    /* 頂部細緻漸層飾條 */
     .profile-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
+      height: 4px;
       background: linear-gradient(90deg, var(--primary), var(--primary-mid), var(--accent));
-      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
     }
 
-    /* 右下角裝飾圓 */
-    .profile-card::after {
-      content: '';
-      position: absolute;
-      bottom: -60px;
-      right: -60px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
-      pointer-events: none;
+    .avatar-wrapper {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      flex-shrink: 0;
     }
 
     .avatar-ring {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 50%, var(--accent) 100%);
-      padding: 3px;
-      box-shadow: var(--shadow-md), 0 0 0 4px var(--primary-light);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      padding: 4px;
+      box-shadow: var(--shadow-md), 0 0 0 6px var(--primary-light);
+      animation: avatar-pulse 3s ease-in-out infinite alternate;
       transition: var(--transition-spring);
     }
 
-    .avatar-ring:hover {
-      transform: scale(1.04) rotate(4deg);
-      box-shadow: var(--shadow-lg), 0 0 0 6px var(--primary-light);
+    @keyframes avatar-pulse {
+      0% { transform: scale(1); box-shadow: var(--shadow-md), 0 0 0 6px var(--primary-light); }
+      100% { transform: scale(1.03); box-shadow: var(--shadow-lg), 0 0 0 10px rgba(79, 70, 229, 0.12); }
     }
 
     .avatar-img {
@@ -245,6 +287,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
+      background-color: #fff;
       border: 3px solid #fff;
     }
 
@@ -255,7 +298,7 @@
       gap: 12px;
     }
 
-    .profile-name-row {
+    .profile-header {
       display: flex;
       align-items: center;
       gap: 14px;
@@ -264,10 +307,10 @@
 
     .profile-name {
       font-family: var(--font-display);
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 800;
       color: var(--text-primary);
-      letter-spacing: -0.8px;
+      letter-spacing: -1px;
       line-height: 1.2;
     }
 
@@ -275,20 +318,26 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 12px;
+      padding: 5px 14px;
       background: var(--primary-light);
       color: var(--primary);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 700;
       border-radius: var(--radius-full);
       border: 1px solid rgba(79, 70, 229, 0.15);
     }
 
+    .profile-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
     .profile-bio {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--text-secondary);
       line-height: 1.7;
-      max-width: 580px;
+      max-width: 600px;
     }
 
     .profile-meta {
@@ -301,156 +350,206 @@
     .meta-item {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-size: 0.875rem;
       color: var(--text-muted);
       font-weight: 500;
     }
 
     .meta-item svg {
-      width: 15px;
-      height: 15px;
+      width: 16px;
+      height: 16px;
       fill: var(--text-subtle);
       flex-shrink: 0;
     }
 
-    /* 右側：Stats Panel (3 個統計數字) */
-    .stats-panel {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-base);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-md);
-      padding: 30px 36px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      gap: 6px;
-      min-width: 220px;
-    }
-
-    .stat-cell {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border-base);
+    .meta-item a {
+      color: inherit;
+      text-decoration: none;
       transition: var(--transition);
     }
 
-    .stat-cell:last-child { border-bottom: none; }
-
-    .stat-cell:hover { transform: translateX(4px); }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 800;
+    .meta-item a:hover {
       color: var(--primary);
-      letter-spacing: -1px;
-      line-height: 1.1;
     }
 
-    .stat-desc {
+    /* Bento Box: 數據統計卡 */
+    .stats-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--pink));
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      transition: var(--transition);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-row:hover {
+      transform: translateX(6px);
+    }
+
+    .stat-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stat-row:nth-child(1) .stat-icon-box { background: var(--primary-light); color: var(--primary); }
+    .stat-row:nth-child(2) .stat-icon-box { background: var(--accent-light); color: var(--accent); }
+    .stat-row:nth-child(3) .stat-icon-box { background: var(--pink-light); color: var(--pink); }
+
+    .stat-icon-box svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .stat-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-label {
       font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-top: 4px;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
     }
 
     /* =====================================================================
-       控制區 (搜尋 / 排序 / 篩選)
+       控制欄面板 (搜尋 / 篩選 / 排序)
        ===================================================================== */
-    .control-bar {
+    .control-panel {
       background: var(--bg-surface);
-      border: 1px solid var(--border-base);
+      border: 1px solid rgba(226, 232, 240, 0.8);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-sm);
-      padding: 22px 28px;
-      margin-bottom: 28px;
+      padding: 24px 30px;
+      margin-bottom: 30px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
     }
 
-    .control-top-row {
+    .control-row-top {
       display: grid;
       grid-template-columns: 1fr auto auto;
-      gap: 14px;
+      gap: 16px;
       align-items: center;
     }
 
-    /* 搜尋框 */
-    .search-wrap {
+    /* 搜尋 */
+    .search-container {
       position: relative;
     }
 
-    .search-input {
+    .search-input-field {
       width: 100%;
-      padding: 11px 16px 11px 44px;
+      padding: 12px 16px 12px 46px;
       background: var(--bg-canvas);
       border: 1.5px solid var(--border-base);
       border-radius: var(--radius-md);
       color: var(--text-primary);
       font-family: var(--font-body);
-      font-size: 0.93rem;
+      font-size: 0.95rem;
       outline: none;
       transition: var(--transition);
     }
 
-    .search-input::placeholder { color: var(--text-subtle); }
+    .search-input-field::placeholder { color: var(--text-subtle); }
 
-    .search-input:focus {
+    .search-input-field:focus {
       background: #fff;
-      border-color: var(--primary);
+      border-color: var(--border-focus);
       box-shadow: var(--shadow-focus);
     }
 
-    .search-icon-svg {
+    .search-icon-inside {
       position: absolute;
-      left: 14px;
+      left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      width: 17px;
-      height: 17px;
+      width: 18px;
+      height: 18px;
       fill: var(--text-subtle);
       pointer-events: none;
       transition: var(--transition);
     }
 
-    .search-input:focus ~ .search-icon-svg { fill: var(--primary); }
+    .search-input-field:focus ~ .search-icon-inside { fill: var(--primary); }
 
     /* 排序下拉 */
-    .sort-select {
+    .sort-dropdown {
       appearance: none;
       -webkit-appearance: none;
-      padding: 11px 40px 11px 16px;
-      background: var(--bg-canvas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%2364748B'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 14px center;
+      padding: 12px 40px 12px 18px;
+      background: var(--bg-canvas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='%2364748B'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 16px center;
       border: 1.5px solid var(--border-base);
       border-radius: var(--radius-md);
       color: var(--text-secondary);
       font-family: var(--font-body);
-      font-size: 0.93rem;
+      font-size: 0.95rem;
       cursor: pointer;
       outline: none;
       transition: var(--transition);
       white-space: nowrap;
     }
 
-    .sort-select:focus {
+    .sort-dropdown:focus {
       background-color: #fff;
-      border-color: var(--primary);
+      border-color: var(--border-focus);
       box-shadow: var(--shadow-focus);
     }
 
-    /* Fork 切換開關 */
-    .toggle-wrap {
+    /* Fork 切換 */
+    .fork-filter-toggle {
       display: flex;
       align-items: center;
       gap: 10px;
       cursor: pointer;
-      padding: 9px 16px;
+      padding: 10px 18px;
       background: var(--bg-canvas);
       border: 1.5px solid var(--border-base);
       border-radius: var(--radius-md);
@@ -459,24 +558,27 @@
       white-space: nowrap;
     }
 
-    .toggle-wrap:hover { border-color: var(--primary); background: var(--primary-light); }
+    .fork-filter-toggle:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
 
-    .toggle-text {
-      font-size: 0.875rem;
+    .fork-toggle-text {
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-secondary);
     }
 
-    .toggle-track {
+    .fork-toggle-track {
       position: relative;
-      width: 40px;
+      width: 42px;
       height: 22px;
       background: var(--border-strong);
       border-radius: var(--radius-full);
       transition: var(--transition);
     }
 
-    .toggle-track::after {
+    .fork-toggle-track::after {
       content: '';
       position: absolute;
       top: 3px;
@@ -489,144 +591,154 @@
       transition: var(--transition-spring);
     }
 
-    .toggle-hidden {
+    .fork-checkbox-hidden {
       display: none;
     }
 
-    .toggle-hidden:checked + .toggle-track {
+    .fork-checkbox-hidden:checked + .fork-toggle-track {
       background: var(--primary);
     }
 
-    .toggle-hidden:checked + .toggle-track::after {
-      left: 21px;
+    .fork-checkbox-hidden:checked + .fork-toggle-track::after {
+      left: 23px;
     }
 
-    /* 語言篩選標籤 */
-    .filter-section {
-      border-top: 1px solid var(--border-base);
-      padding-top: 16px;
+    /* 語言分類 */
+    .language-filter-row {
+      border-top: 1px solid rgba(226, 232, 240, 0.6);
+      padding-top: 18px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .filter-label {
+    .lang-filter-label {
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
     }
 
-    .lang-chips {
+    .language-chips-wrapper {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .lang-chip {
+    .lang-filter-chip {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
+      gap: 8px;
+      padding: 7px 16px;
       border-radius: var(--radius-full);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 600;
       background: var(--bg-canvas);
       border: 1.5px solid var(--border-base);
-      color: var(--text-muted);
+      color: var(--text-secondary);
       cursor: pointer;
       transition: var(--transition);
     }
 
-    .lang-chip:hover {
+    .lang-filter-chip:hover {
       border-color: var(--primary);
       color: var(--primary);
       background: var(--primary-light);
     }
 
-    .lang-chip.active {
+    .lang-filter-chip.active {
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
-      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
     }
 
-    .chip-dot {
-      width: 7px;
-      height: 7px;
+    .lang-color-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     /* =====================================================================
-       Repos Grid + 卡片
+       專案展示網格 (Repos Grid)
        ===================================================================== */
-    .repos-grid {
+    .repositories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
       margin-bottom: 60px;
     }
 
     /* 專案卡片 */
-    .repo-card {
+    .repository-card {
       background: var(--bg-surface);
-      border: 1.5px solid var(--border-base);
+      border: 1px solid rgba(226, 232, 240, 0.9);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
-      padding: 28px;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       gap: 16px;
       text-decoration: none;
       color: inherit;
-      transition: var(--transition-spring);
-      cursor: default;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.25s;
     }
 
-    /* Hover 時左側彩色邊框裝飾 */
-    .repo-card::before {
+    /* 滑鼠光澤感遮罩 (Shine effect) */
+    .repository-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at var(--shine-x, 50%) var(--shine-y, 50%), rgba(255, 255, 255, 0.35) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* 左側 Indigo 漸變飾條，Hover 滑入 */
+    .repository-card::before {
       content: '';
       position: absolute;
       left: 0;
       top: 0;
       bottom: 0;
-      width: 3px;
-      background: linear-gradient(to bottom, var(--primary), var(--primary-mid));
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-mid) 100%);
       border-radius: 0 0 0 var(--radius-lg);
       transform: scaleY(0);
       transform-origin: top;
       transition: var(--transition-spring);
+      z-index: 3;
     }
 
-    .repo-card:hover {
-      border-color: var(--primary);
-      box-shadow: var(--shadow-lg), 0 0 0 1px rgba(79, 70, 229, 0.08);
-      transform: translateY(-4px);
+    .repository-card:hover {
+      border-color: var(--primary-mid);
+      box-shadow: 0 16px 36px -8px rgba(79, 70, 229, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
     }
 
-    .repo-card:hover::before {
+    .repository-card:hover::before {
       transform: scaleY(1);
     }
 
-    /* 卡片頂部 */
-    .card-header {
+    .card-row-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 12px;
     }
 
-    .card-title-area {
-      flex: 1;
-    }
-
-    .card-repo-name {
+    .repo-name-heading {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.3px;
@@ -635,42 +747,36 @@
       transition: var(--transition);
     }
 
-    .repo-card:hover .card-repo-name {
+    .repository-card:hover .repo-name-heading {
       color: var(--primary);
     }
 
-    .card-repo-name a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .type-badge {
-      font-size: 0.7rem;
+    .repo-type-tag {
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: var(--radius-full);
       white-space: nowrap;
       border: 1.5px solid;
       flex-shrink: 0;
     }
 
-    .type-badge.fork {
+    .repo-type-tag.fork {
       background: var(--accent-light);
       color: var(--accent);
-      border-color: rgba(8, 145, 178, 0.25);
+      border-color: rgba(8, 145, 178, 0.2);
     }
 
-    .type-badge.original {
+    .repo-type-tag.original {
       background: var(--primary-light);
       color: var(--primary);
-      border-color: rgba(79, 70, 229, 0.2);
+      border-color: rgba(79, 70, 229, 0.15);
     }
 
-    /* 卡片描述 */
-    .card-description {
-      font-size: 0.9rem;
+    .repo-desc-text {
+      font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.65;
       display: -webkit-box;
@@ -680,139 +786,134 @@
       flex: 1;
     }
 
-    /* 卡片底部 */
-    .card-footer {
+    .card-row-bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid var(--border-base);
+      border-top: 1px solid rgba(226, 232, 240, 0.6);
       padding-top: 16px;
       margin-top: auto;
     }
 
-    .card-meta {
+    .repo-metadata-box {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       font-size: 0.82rem;
       color: var(--text-muted);
     }
 
-    .meta-lang {
+    .repo-meta-language {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       font-weight: 600;
     }
 
-    .meta-stat {
+    .repo-meta-stat {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
     }
 
-    .meta-stat svg {
-      width: 13px;
-      height: 13px;
+    .repo-meta-stat svg {
+      width: 14px;
+      height: 14px;
       fill: var(--text-subtle);
     }
 
-    .card-open-btn {
+    .repo-link-action-btn {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       padding: 6px 14px;
       background: var(--primary-light);
       color: var(--primary);
       font-size: 0.82rem;
       font-weight: 700;
       border-radius: var(--radius-full);
-      text-decoration: none;
       transition: var(--transition);
-      border: 1.5px solid transparent;
     }
 
-    .card-open-btn:hover {
+    .repository-card:hover .repo-link-action-btn {
       background: var(--primary);
       color: #fff;
-      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
     }
 
-    .card-open-btn svg {
-      width: 11px;
-      height: 11px;
+    .repo-link-action-btn svg {
+      width: 12px;
+      height: 12px;
       fill: currentColor;
     }
 
     /* =====================================================================
-       骨架屏 (Skeleton)
+       優雅骨架屏 (Skeleton Screens)
        ===================================================================== */
-    .skeleton-card {
+    .skeleton-layout-card {
       background: var(--bg-surface);
-      border: 1.5px solid var(--border-base);
+      border: 1px solid rgba(226, 232, 240, 0.8);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
-      padding: 28px;
-      height: 260px;
+      padding: 30px;
+      height: 240px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .skel-block {
-      background: linear-gradient(90deg, var(--bg-canvas) 25%, var(--border-base) 50%, var(--bg-canvas) 75%);
+    .skeleton-wave-block {
+      background: linear-gradient(90deg, var(--bg-canvas) 25%, rgba(226, 232, 240, 0.8) 50%, var(--bg-canvas) 75%);
       background-size: 200% 100%;
-      animation: skel-wave 1.6s infinite;
+      animation: skeleton-wave-anim 1.6s infinite;
       border-radius: var(--radius-sm);
     }
 
-    @keyframes skel-wave {
+    @keyframes skeleton-wave-anim {
       0%   { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
 
-    .skel-title  { height: 22px; width: 58%; }
-    .skel-line   { height: 13px; width: 100%; margin-top: 12px; }
-    .skel-line.w90 { width: 90%; }
-    .skel-line.w70 { width: 70%; }
-    .skel-footer { display: flex; justify-content: space-between; border-top: 1px solid var(--border-base); padding-top: 16px; }
-    .skel-meta   { height: 14px; width: 35%; }
-    .skel-btn    { height: 14px; width: 20%; }
+    .skel-title-line  { height: 24px; width: 60%; }
+    .skel-desc-block  { height: 50px; width: 100%; margin-top: 14px; }
+    .skel-footer-row  { display: flex; justify-content: space-between; border-top: 1px solid rgba(226, 232, 240, 0.6); padding-top: 16px; }
+    .skel-meta-text   { height: 14px; width: 38%; }
+    .skel-action-btn  { height: 26px; width: 60px; border-radius: var(--radius-full); }
 
     /* =====================================================================
-       空白 / 錯誤狀態
+       空白與錯誤狀態
        ===================================================================== */
-    .status-box {
+    .status-alert-box {
       grid-column: 1 / -1;
       text-align: center;
-      padding: 80px 20px;
+      padding: 70px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 16px;
     }
 
-    .status-icon {
-      width: 60px;
-      height: 60px;
+    .status-alert-icon {
+      width: 56px;
+      height: 56px;
       fill: var(--border-strong);
     }
 
-    .status-title {
+    .status-alert-title {
       font-family: var(--font-display);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--text-secondary);
     }
 
-    .status-text {
+    .status-alert-desc {
       font-size: 0.95rem;
       color: var(--text-muted);
       max-width: 440px;
       line-height: 1.7;
     }
 
-    .status-btn {
+    .status-retry-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -825,27 +926,28 @@
       font-weight: 700;
       font-size: 0.9rem;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
       transition: var(--transition);
     }
 
-    .status-btn:hover {
+    .status-retry-btn:hover {
       background: var(--primary-hover);
-      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
       transform: translateY(-1px);
     }
 
     /* =====================================================================
-       Footer
+       頁尾
        ===================================================================== */
     .site-footer {
-      border-top: 1px solid var(--border-base);
-      padding: 32px 20px;
+      border-top: 1px solid rgba(226, 232, 240, 0.8);
+      padding: 36px 20px;
       text-align: center;
+      position: relative;
     }
 
     .footer-inner {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -859,54 +961,107 @@
     .footer-heart {
       color: #E11D48;
       display: inline-block;
-      animation: heart-pulse 1.6s infinite;
+      animation: heart-pulse-anim 1.6s infinite;
     }
 
-    @keyframes heart-pulse {
+    @keyframes heart-pulse-anim {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.18); }
     }
 
     /* =====================================================================
-       響應式
+       全域動畫效果 (Fade-in)
+       ===================================================================== */
+    .fade-in-content {
+      opacity: 0;
+      animation: contentFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes contentFadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =====================================================================
+       響應式斷點
        ===================================================================== */
     @media (max-width: 1024px) {
-      .hero-wrapper {
+      .hero-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
-      .stats-panel {
+      .profile-card {
+        padding: 32px;
+      }
+      .stats-card {
         flex-direction: row;
-        min-width: unset;
-        padding: 24px 28px;
-        justify-content: space-around;
+        gap: 16px;
+        padding: 24px;
       }
-      .stat-cell {
+      .stat-row {
+        flex: 1;
+        flex-direction: column;
         border-bottom: none;
-        border-right: 1px solid var(--border-base);
-        padding: 0 28px;
+        border-right: 1px solid rgba(226, 232, 240, 0.6);
+        padding: 0 12px;
         align-items: center;
+        text-align: center;
       }
-      .stat-cell:last-child { border-right: none; }
+      .stat-row:last-child {
+        border-right: none;
+      }
+      .stat-row:hover {
+        transform: translateY(-4px);
+      }
     }
 
     @media (max-width: 768px) {
       .profile-card {
         flex-direction: column;
         text-align: center;
-        padding: 28px 22px;
+        padding: 32px 20px;
+        gap: 24px;
       }
-      .avatar-ring { width: 90px; height: 90px; }
-      .profile-name { font-size: 1.8rem; }
-      .profile-name-row { justify-content: center; }
+      .avatar-wrapper {
+        width: 100px;
+        height: 100px;
+      }
+      .profile-name { font-size: 2rem; }
+      .profile-header { justify-content: center; }
       .profile-meta { justify-content: center; }
-      .stats-panel { flex-direction: column; gap: 0; }
-      .stat-cell { border-right: none; border-bottom: 1px solid var(--border-base); padding: 14px 0; align-items: flex-start; }
-      .control-top-row { grid-template-columns: 1fr; }
-      .repos-grid { grid-template-columns: 1fr; }
+      .stats-card {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .stat-row {
+        border-right: none;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        padding: 12px 0;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+      }
+      .stat-row:last-child {
+        border-bottom: none;
+      }
+      .stat-row:hover {
+        transform: translateX(4px);
+      }
+      .control-row-top {
+        grid-template-columns: 1fr;
+      }
+      .repositories-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- 環境光暈背景 -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
 
   <!-- ==================== 導覽列 ==================== -->
   <nav class="site-nav">
@@ -916,7 +1071,7 @@
         <span class="nav-brand-text">chenbyang</span>
       </a>
       <div class="nav-right">
-        <a href="https://github.com/chenbyang" target="_blank" class="nav-github-btn">
+        <a href="https://github.com/chenbyang" target="_blank" class="nav-github-btn" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           前往 GitHub
         </a>
@@ -924,26 +1079,28 @@
     </div>
   </nav>
 
-  <!-- ==================== 主體 ==================== -->
-  <div class="app-container">
+  <!-- ==================== 主體內容 ==================== -->
+  <div class="app-container fade-in-content">
 
-    <!-- Hero: Profile + Stats -->
-    <section class="hero-wrapper">
+    <!-- Bento Box: Hero Section -->
+    <section class="hero-grid">
 
-      <!-- 個人資料卡 -->
+      <!-- 個人介紹卡 -->
       <div class="profile-card">
-        <div class="avatar-ring">
-          <img id="user-avatar" class="avatar-img" src="https://github.com/chenbyang.png" alt="chenbyang">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring">
+            <img id="user-avatar" class="avatar-img" src="https://github.com/chenbyang.png" alt="chenbyang">
+          </div>
         </div>
         <div class="profile-info">
-          <div class="profile-name-row">
+          <div class="profile-header">
             <h1 id="user-name" class="profile-name">chenbyang</h1>
             <span class="profile-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              開發者
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              專業開發者
             </span>
           </div>
-          <p id="user-bio" class="profile-bio">讀取個人簡介中…</p>
+          <p id="user-bio" class="profile-bio">正在連線至 GitHub API 取得個人簡介中…</p>
           <div class="profile-meta" id="profile-meta">
             <span class="meta-item">
               <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
@@ -953,76 +1110,106 @@
         </div>
       </div>
 
-      <!-- 統計數字卡 -->
-      <div class="stats-panel">
-        <div class="stat-cell">
-          <span id="stat-repos" class="stat-number">—</span>
-          <span class="stat-desc">公開專案</span>
+      <!-- 統計數據卡 -->
+      <div class="stats-card">
+        <!-- 專案數 -->
+        <div class="stat-row">
+          <div class="stat-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+          </div>
+          <div class="stat-content">
+            <span id="stat-repos" class="stat-value">—</span>
+            <span class="stat-label">公開專案</span>
+          </div>
         </div>
-        <div class="stat-cell">
-          <span id="stat-stars" class="stat-number">—</span>
-          <span class="stat-desc">累計 Stars</span>
+        <!-- 累計 Stars -->
+        <div class="stat-row">
+          <div class="stat-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <div class="stat-content">
+            <span id="stat-stars" class="stat-value">—</span>
+            <span class="stat-label">累計 Stars</span>
+          </div>
         </div>
-        <div class="stat-cell">
-          <span id="stat-followers" class="stat-number">—</span>
-          <span class="stat-desc">追蹤者</span>
+        <!-- Followers -->
+        <div class="stat-row">
+          <div class="stat-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.83 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="stat-content">
+            <span id="stat-followers" class="stat-value">—</span>
+            <span class="stat-label">追蹤者</span>
+          </div>
         </div>
       </div>
 
     </section>
 
-    <!-- 控制區 -->
-    <div class="control-bar">
-      <div class="control-top-row">
+    <!-- 控制面板 -->
+    <div class="control-panel">
+      <div class="control-row-top">
         <!-- 搜尋 -->
-        <div class="search-wrap">
-          <input id="search-input" type="text" class="search-input" placeholder="搜尋專案名稱或描述…">
-          <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/></svg>
+        <div class="search-container">
+          <input id="search-input" type="text" class="search-input-field" placeholder="搜尋專案名稱或描述…">
+          <svg class="search-icon-inside" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 5 9.5 7.01 14 9.5 14z"/></svg>
         </div>
         <!-- 排序 -->
-        <select id="sort-select" class="sort-select">
-          <option value="pushed">最近更新</option>
-          <option value="stars">最多 Stars</option>
-          <option value="forks">最多 Forks</option>
-          <option value="name">名稱 A-Z</option>
+        <select id="sort-select" class="sort-dropdown">
+          <option value="pushed">最後更新時間</option>
+          <option value="stars">最多 Stars 數</option>
+          <option value="forks">最多 Forks 數</option>
+          <option value="name">專案名稱 (A-Z)</option>
         </select>
         <!-- Fork 切換 -->
-        <div id="fork-toggle" class="toggle-wrap">
-          <span class="toggle-text">顯示 Fork</span>
-          <input type="checkbox" id="fork-cb" class="toggle-hidden">
-          <div class="toggle-track" id="toggle-track-el"></div>
+        <div id="fork-toggle" class="fork-filter-toggle">
+          <span class="fork-toggle-text">顯示 Fork 專案</span>
+          <input type="checkbox" id="fork-checkbox" class="fork-checkbox-hidden">
+          <div class="fork-toggle-track" id="fork-toggle-track"></div>
         </div>
       </div>
 
       <!-- 語言篩選 -->
-      <div class="filter-section">
-        <span class="filter-label">程式語言篩選</span>
-        <div id="lang-chips" class="lang-chips"></div>
+      <div class="language-filter-row">
+        <span class="lang-filter-label">依程式語言篩選</span>
+        <div id="lang-chips-container" class="language-chips-wrapper">
+          <!-- JS 動態生成 -->
+        </div>
       </div>
     </div>
 
-    <!-- 專案網格 -->
-    <main id="repos-container" class="repos-grid">
-      <!-- 骨架屏 -->
-      <div class="skeleton-card">
-        <div class="skel-block skel-title"></div>
-        <div><div class="skel-block skel-line"></div><div class="skel-block skel-line w90"></div><div class="skel-block skel-line w70"></div></div>
-        <div class="skel-footer"><div class="skel-block skel-meta"></div><div class="skel-block skel-btn"></div></div>
+    <!-- 專案展示網格 -->
+    <main id="repositories-container" class="repositories-grid">
+      <!-- 骨架屏載入畫面 -->
+      <div class="skeleton-layout-card">
+        <div class="skeleton-wave-block skel-title-line"></div>
+        <div>
+          <div class="skeleton-wave-block skel-desc-block"></div>
+        </div>
+        <div class="skel-footer-row">
+          <div class="skeleton-wave-block skel-meta-text"></div>
+          <div class="skeleton-wave-block skel-action-btn"></div>
+        </div>
       </div>
-      <div class="skeleton-card">
-        <div class="skel-block skel-title"></div>
-        <div><div class="skel-block skel-line"></div><div class="skel-block skel-line w90"></div><div class="skel-block skel-line w70"></div></div>
-        <div class="skel-footer"><div class="skel-block skel-meta"></div><div class="skel-block skel-btn"></div></div>
+      <div class="skeleton-layout-card">
+        <div class="skeleton-wave-block skel-title-line"></div>
+        <div>
+          <div class="skeleton-wave-block skel-desc-block"></div>
+        </div>
+        <div class="skel-footer-row">
+          <div class="skeleton-wave-block skel-meta-text"></div>
+          <div class="skeleton-wave-block skel-action-btn"></div>
+        </div>
       </div>
-      <div class="skeleton-card">
-        <div class="skel-block skel-title"></div>
-        <div><div class="skel-block skel-line"></div><div class="skel-block skel-line w90"></div><div class="skel-block skel-line w70"></div></div>
-        <div class="skel-footer"><div class="skel-block skel-meta"></div><div class="skel-block skel-btn"></div></div>
-      </div>
-      <div class="skeleton-card">
-        <div class="skel-block skel-title"></div>
-        <div><div class="skel-block skel-line"></div><div class="skel-block skel-line w90"></div><div class="skel-block skel-line w70"></div></div>
-        <div class="skel-footer"><div class="skel-block skel-meta"></div><div class="skel-block skel-btn"></div></div>
+      <div class="skeleton-layout-card">
+        <div class="skeleton-wave-block skel-title-line"></div>
+        <div>
+          <div class="skeleton-wave-block skel-desc-block"></div>
+        </div>
+        <div class="skel-footer-row">
+          <div class="skeleton-wave-block skel-meta-text"></div>
+          <div class="skeleton-wave-block skel-action-btn"></div>
+        </div>
       </div>
     </main>
 
@@ -1037,12 +1224,13 @@
 
   <script>
     /* ================================================================
-       設定與常數
+       全域設定與常數
        ================================================================ */
-    const GITHUB_USER   = 'chenbyang';
-    const CACHE_TTL_MS  = 5 * 60 * 1000; // 5 分鐘
+    const GITHUB_USERNAME  = 'chenbyang';
+    const CACHE_LIFETIME   = 5 * 60 * 1000; // 5 分鐘快取
 
-    const LANG_COLORS = {
+    // 程式語言配色系統
+    const LANGUAGE_COLOR_MAP = {
       JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5',
       HTML: '#e34c26', CSS: '#563d7c', Vue: '#41b883', 'C#': '#178600',
       'C++': '#f34b7d', Java: '#b07219', Go: '#00ADD8', Shell: '#89e051',
@@ -1051,215 +1239,366 @@
     };
 
     /* ================================================================
-       DOM 引用
+       DOM 節點參照
        ================================================================ */
-    const reposContainer = document.getElementById('repos-container');
-    const searchInput    = document.getElementById('search-input');
-    const sortSelect     = document.getElementById('sort-select');
-    const forkToggle     = document.getElementById('fork-toggle');
-    const forkCb         = document.getElementById('fork-cb');
-    const toggleTrack    = document.getElementById('toggle-track-el');
-    const langChips      = document.getElementById('lang-chips');
+    const reposContainer  = document.getElementById('repositories-container');
+    const searchInput     = document.getElementById('search-input');
+    const sortSelect      = document.getElementById('sort-select');
+    const forkToggleDiv   = document.getElementById('fork-toggle');
+    const forkCheckbox    = document.getElementById('fork-checkbox');
+    const langChipsDiv    = document.getElementById('lang-chips-container');
 
     /* ================================================================
-       狀態
+       元件狀態控制
        ================================================================ */
-    let allRepos    = [];
-    let activeLang  = null;
-    let showForks   = false;
+    let fetchedRepositories = [];
+    let selectedLanguage    = null;
+    let shouldShowForks     = false;
 
     /* ================================================================
-       Fork Toggle
+       事件監聽器設定
        ================================================================ */
-    forkToggle.addEventListener('click', (e) => {
-      if (e.target === forkCb) return;
-      forkCb.checked = !forkCb.checked;
-      showForks = forkCb.checked;
-      applyFilters();
+    // Fork 切換控制
+    forkToggleDiv.addEventListener('click', (e) => {
+      if (e.target === forkCheckbox) return;
+      forkCheckbox.checked = !forkCheckbox.checked;
+      shouldShowForks = forkCheckbox.checked;
+      filterAndRenderRepos();
     });
-    forkCb.addEventListener('change', () => {
-      showForks = forkCb.checked;
-      applyFilters();
+    forkCheckbox.addEventListener('change', () => {
+      shouldShowForks = forkCheckbox.checked;
+      filterAndRenderRepos();
     });
-    searchInput.addEventListener('input', applyFilters);
-    sortSelect.addEventListener('change', applyFilters);
+
+    // 搜尋與排序
+    searchInput.addEventListener('input', filterAndRenderRepos);
+    sortSelect.addEventListener('change', filterAndRenderRepos);
 
     /* ================================================================
-       GitHub API 資料讀取（含快取）
+       跑數字動畫 (Count-Up Animation)
        ================================================================ */
-    async function fetchData() {
-      const KEY_USER  = `gh2_user_${GITHUB_USER}`;
-      const KEY_REPOS = `gh2_repos_${GITHUB_USER}`;
-      const KEY_TIME  = `gh2_ts_${GITHUB_USER}`;
+    function runCountUpAnimation(targetElement, finalValue) {
+      if (isNaN(finalValue) || finalValue === 0) {
+        targetElement.textContent = finalValue;
+        return;
+      }
+      let startTime = null;
+      const duration = 1200; // 1.2 秒跑完動畫
 
-      const cachedTs = localStorage.getItem(KEY_TIME);
-      if (cachedTs && Date.now() - Number(cachedTs) < CACHE_TTL_MS) {
-        const u = JSON.parse(localStorage.getItem(KEY_USER));
-        const r = JSON.parse(localStorage.getItem(KEY_REPOS));
-        if (u && r) { renderProfile(u); allRepos = r; buildLangChips(); applyFilters(); return; }
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        // 使用 Ease-Out Cubic 加速減速曲線，讓動畫看起來更絲滑
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(easeProgress * finalValue);
+        
+        targetElement.textContent = currentValue;
+        
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          targetElement.textContent = finalValue;
+        }
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    /* ================================================================
+       3D Tilt 卡片三維懸浮互動
+       ================================================================ */
+    function applyTiltEffect(cardElement) {
+      cardElement.addEventListener('mousemove', (e) => {
+        const rect = cardElement.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // 限制最大傾斜角度在 8 度以內，避免過度晃動
+        const rotateX = ((centerY - mouseY) / centerY) * 8;
+        const rotateY = ((mouseX - centerX) / centerX) * 8;
+
+        cardElement.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+        
+        // 計算光澤點位置百分比 (CSS custom properties)
+        const shinePercentX = (mouseX / rect.width) * 100;
+        const shinePercentY = (mouseY / rect.height) * 100;
+        cardElement.style.setProperty('--shine-x', `${shinePercentX}%`);
+        cardElement.style.setProperty('--shine-y', `${shinePercentY}%`);
+      });
+
+      cardElement.addEventListener('mouseleave', () => {
+        // 滑鼠離開時，平滑回復原位
+        cardElement.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0deg)';
+        cardElement.style.setProperty('--shine-x', `50%`);
+        cardElement.style.setProperty('--shine-y', `50%`);
+      });
+    }
+
+    /* ================================================================
+       GitHub REST API 整合載入與快取
+       ================================================================ */
+    async function fetchGitHubData() {
+      const STORAGE_KEY_USER  = `gh_prof_light_${GITHUB_USERNAME}`;
+      const STORAGE_KEY_REPOS = `gh_repo_light_${GITHUB_USERNAME}`;
+      const STORAGE_KEY_TIME  = `gh_time_light_${GITHUB_USERNAME}`;
+
+      const cachedTimestamp = localStorage.getItem(STORAGE_KEY_TIME);
+      if (cachedTimestamp && (Date.now() - Number(cachedTimestamp) < CACHE_LIFETIME)) {
+        const cachedUserObj  = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+        const cachedReposObj = JSON.parse(localStorage.getItem(STORAGE_KEY_REPOS));
+        
+        if (cachedUserObj && cachedReposObj) {
+          renderUserProfile(cachedUserObj);
+          fetchedRepositories = cachedReposObj;
+          generateLanguageChips();
+          filterAndRenderRepos();
+          return;
+        }
       }
 
       try {
-        const [uRes, rRes] = await Promise.all([
-          fetch(`https://api.github.com/users/${GITHUB_USER}`),
-          fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
+        const [profileResponse, reposResponse] = await Promise.all([
+          fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
+          fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`)
         ]);
-        if (!uRes.ok || !rRes.ok) throw new Error('GitHub API 回應異常，請稍後再試。');
 
-        const u = await uRes.json();
-        const r = await rRes.json();
+        if (!profileResponse.ok || !reposResponse.ok) {
+          throw new Error('無法順利讀取 GitHub API 資料，請稍候重試。');
+        }
 
-        localStorage.setItem(KEY_USER,  JSON.stringify(u));
-        localStorage.setItem(KEY_REPOS, JSON.stringify(r));
-        localStorage.setItem(KEY_TIME,  String(Date.now()));
+        const userProfile = await profileResponse.json();
+        const repositories = await reposResponse.json();
 
-        renderProfile(u);
-        allRepos = r;
-        buildLangChips();
-        applyFilters();
+        // 寫入快取
+        localStorage.setItem(STORAGE_KEY_USER,  JSON.stringify(userProfile));
+        localStorage.setItem(STORAGE_KEY_REPOS, JSON.stringify(repositories));
+        localStorage.setItem(STORAGE_KEY_TIME,  String(Date.now()));
 
-      } catch (err) {
-        showError(err.message);
+        renderUserProfile(userProfile);
+        fetchedRepositories = repositories;
+        generateLanguageChips();
+        filterAndRenderRepos();
+
+      } catch (error) {
+        displayErrorUI(error.message);
       }
     }
 
     /* ================================================================
-       渲染個人資料
+       渲染 Profile 資料 (帶有 Count-up 動態數字)
        ================================================================ */
-    function renderProfile(user) {
-      document.getElementById('user-avatar').src = user.avatar_url;
-      document.getElementById('nav-avatar').src  = user.avatar_url;
-      document.getElementById('user-name').textContent = user.name || user.login;
-      document.getElementById('user-bio').textContent  = user.bio  || '這位開發者沒有留下任何簡介。';
-      document.getElementById('stat-repos').textContent     = user.public_repos;
-      document.getElementById('stat-followers').textContent = user.followers;
+    function renderUserProfile(profile) {
+      document.getElementById('user-avatar').src = profile.avatar_url;
+      document.getElementById('nav-avatar').src  = profile.avatar_url;
+      document.getElementById('user-name').textContent = profile.name || profile.login;
+      document.getElementById('user-bio').textContent  = profile.bio  || '此開發者目前尚未新增個人簡介。';
+
+      // 跑動數字
+      runCountUpAnimation(document.getElementById('stat-repos'), profile.public_repos);
+      runCountUpAnimation(document.getElementById('stat-followers'), profile.followers);
+
+      // 動態更新聯絡資訊與部落格等 Profile Meta
+      const metaContainer = document.getElementById('profile-meta');
+      let metaHTML = `
+        <span class="meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+          <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" rel="noopener">github.com/${GITHUB_USERNAME}</a>
+        </span>
+      `;
+
+      if (profile.location) {
+        metaHTML += `
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            ${profile.location}
+          </span>
+        `;
+      }
+
+      if (profile.blog) {
+        const blogUrl = profile.blog.startsWith('http') ? profile.blog : `https://${profile.blog}`;
+        metaHTML += `
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+            <a href="${blogUrl}" target="_blank" rel="noopener">${profile.blog}</a>
+          </span>
+        `;
+      }
+
+      metaContainer.innerHTML = metaHTML;
     }
 
     /* ================================================================
-       建立語言篩選標籤
+       建立語言篩選晶片 (Chips)
        ================================================================ */
-    function buildLangChips() {
+    function generateLanguageChips() {
       const counts = {};
-      allRepos.forEach(r => { if (r.language) counts[r.language] = (counts[r.language] || 0) + 1; });
-      const sorted = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
-
-      let html = `<button class="lang-chip active" data-lang="all">全部</button>`;
-      sorted.forEach(lang => {
-        const color = LANG_COLORS[lang] || '#94A3B8';
-        html += `<button class="lang-chip" data-lang="${lang}">
-          <span class="chip-dot" style="background:${color}"></span>${lang}
-          <span style="font-weight:400;opacity:0.65">(${counts[lang]})</span>
-        </button>`;
+      fetchedRepositories.forEach(repo => {
+        if (repo.language) {
+          counts[repo.language] = (counts[repo.language] || 0) + 1;
+        }
       });
-      langChips.innerHTML = html;
+      
+      const sortedLanguages = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
 
-      langChips.querySelectorAll('.lang-chip').forEach(btn => {
-        btn.addEventListener('click', () => {
-          langChips.querySelectorAll('.lang-chip').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeLang = btn.dataset.lang === 'all' ? null : btn.dataset.lang;
-          applyFilters();
+      let chipsHTML = `<button class="lang-filter-chip active" data-lang="all">全部</button>`;
+      sortedLanguages.forEach(lang => {
+        const color = LANGUAGE_COLOR_MAP[lang] || '#94A3B8';
+        chipsHTML += `
+          <button class="lang-filter-chip" data-lang="${lang}">
+            <span class="lang-color-dot" style="background:${color}"></span>
+            ${lang}
+            <span style="font-weight:400; opacity:0.6; margin-left: 2px;">(${counts[lang]})</span>
+          </button>
+        `;
+      });
+      langChipsDiv.innerHTML = chipsHTML;
+
+      // 監聽 Chip 點擊
+      langChipsDiv.querySelectorAll('.lang-filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          langChipsDiv.querySelectorAll('.lang-filter-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          selectedLanguage = chip.dataset.lang === 'all' ? null : chip.dataset.lang;
+          filterAndRenderRepos();
         });
       });
     }
 
     /* ================================================================
-       篩選 + 排序 + 渲染
+       資料過濾、排序與整合
        ================================================================ */
-    function applyFilters() {
-      let list = [...allRepos];
+    function filterAndRenderRepos() {
+      let filteredList = [...fetchedRepositories];
 
-      // Stars 統計（全量）
-      const totalStars = allRepos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
-      document.getElementById('stat-stars').textContent = totalStars;
+      // 計算累計 Stars 並啟動動畫（僅於第一次或全量資料時，此處依快取全量做統計）
+      const totalStars = fetchedRepositories.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
+      const starsElement = document.getElementById('stat-stars');
+      if (starsElement.textContent === '—') {
+        runCountUpAnimation(starsElement, totalStars);
+      } else {
+        starsElement.textContent = totalStars;
+      }
 
-      // Fork 過濾
-      if (!showForks) list = list.filter(r => !r.fork);
+      // 1. 是否顯示 Fork 專案
+      if (!shouldShowForks) {
+        filteredList = filteredList.filter(repo => !repo.fork);
+      }
 
-      // 語言篩選
-      if (activeLang) list = list.filter(r => r.language === activeLang);
+      // 2. 語言篩選
+      if (selectedLanguage) {
+        filteredList = filteredList.filter(repo => repo.language === selectedLanguage);
+      }
 
-      // 關鍵字搜尋
-      const q = searchInput.value.toLowerCase().trim();
-      if (q) list = list.filter(r =>
-        r.name.toLowerCase().includes(q) ||
-        (r.description && r.description.toLowerCase().includes(q))
-      );
+      // 3. 搜尋關鍵字
+      const keyword = searchInput.value.toLowerCase().trim();
+      if (keyword) {
+        filteredList = filteredList.filter(repo =>
+          repo.name.toLowerCase().includes(keyword) ||
+          (repo.description && repo.description.toLowerCase().includes(keyword))
+        );
+      }
 
-      // 排序
-      const sort = sortSelect.value;
-      if      (sort === 'stars')  list.sort((a, b) => b.stargazers_count - a.stargazers_count);
-      else if (sort === 'forks')  list.sort((a, b) => b.forks_count - a.forks_count);
-      else if (sort === 'name')   list.sort((a, b) => a.name.localeCompare(b.name));
-      else                        list.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+      // 4. 排序邏輯
+      const sortBy = sortSelect.value;
+      if (sortBy === 'stars') {
+        filteredList.sort((a, b) => b.stargazers_count - a.stargazers_count);
+      } else if (sortBy === 'forks') {
+        filteredList.sort((a, b) => b.forks_count - a.forks_count);
+      } else if (sortBy === 'name') {
+        filteredList.sort((a, b) => a.name.localeCompare(b.name));
+      } else {
+        // 預設為最後更新時間 pushed
+        filteredList.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+      }
 
-      renderRepos(list);
+      renderRepositoryCards(filteredList);
     }
 
     /* ================================================================
-       渲染卡片
+       渲染專案卡片
        ================================================================ */
-    function renderRepos(repos) {
-      if (!repos.length) {
+    function renderRepositoryCards(repositories) {
+      if (repositories.length === 0) {
         reposContainer.innerHTML = `
-          <div class="status-box">
-            <svg class="status-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <h2 class="status-title">沒有符合的專案</h2>
-            <p class="status-text">請嘗試調整搜尋關鍵字、排序或語言篩選條件。</p>
-          </div>`;
+          <div class="status-alert-box">
+            <svg class="status-alert-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <h2 class="status-alert-title">找不到符合的公開專案</h2>
+            <p class="status-alert-desc">試著輸入其他關鍵字，或是調整篩選條件。</p>
+          </div>
+        `;
         return;
       }
 
-      reposContainer.innerHTML = repos.map(repo => {
-        const color = LANG_COLORS[repo.language] || '#94A3B8';
-        const date  = new Date(repo.pushed_at).toLocaleDateString('zh-TW', { year: 'numeric', month: 'short', day: 'numeric' });
+      reposContainer.innerHTML = repositories.map(repo => {
+        const color = LANGUAGE_COLOR_MAP[repo.language] || '#94A3B8';
+        const formattedDate = new Date(repo.pushed_at).toLocaleDateString('zh-TW', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        });
+        
         return `
-          <article class="repo-card">
-            <div class="card-header">
-              <div class="card-title-area">
-                <h2 class="card-repo-name">
-                  <a href="${repo.html_url}" target="_blank" rel="noopener">${repo.name}</a>
-                </h2>
-              </div>
-              <span class="type-badge ${repo.fork ? 'fork' : 'original'}">${repo.fork ? 'Fork' : '原創'}</span>
+          <div class="repository-card" onclick="window.open('${repo.html_url}', '_blank', 'noopener')">
+            <div class="card-row-top">
+              <h2 class="repo-name-heading">${repo.name}</h2>
+              <span class="repo-type-tag ${repo.fork ? 'fork' : 'original'}">
+                ${repo.fork ? 'Fork' : '原創'}
+              </span>
             </div>
-            <p class="card-description">${repo.description || '這個專案尚未新增任何描述。'}</p>
-            <div class="card-footer">
-              <div class="card-meta">
-                ${repo.language ? `<span class="meta-lang"><span class="chip-dot" style="background:${color}"></span>${repo.language}</span>` : ''}
-                <span class="meta-stat" title="Stars">
+            <p class="repo-desc-text">
+              ${repo.description || '此專案尚未設定任何描述說明。'}
+            </p>
+            <div class="card-row-bottom">
+              <div class="repo-metadata-box">
+                ${repo.language ? `
+                  <span class="repo-meta-language">
+                    <span class="lang-color-dot" style="background:${color}"></span>
+                    ${repo.language}
+                  </span>
+                ` : ''}
+                <span class="repo-meta-stat" title="Stars 數量">
                   <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ${repo.stargazers_count}
                 </span>
-                <span class="meta-stat" title="Forks">
+                <span class="repo-meta-stat" title="Forks 數量">
                   <svg viewBox="0 0 24 24"><path d="M6 2v6l2 2-2 2v6l6-3 6 3v-6l-2-2 2-2V2l-6 3-6-3z"/></svg>
                   ${repo.forks_count}
                 </span>
               </div>
-              <a href="${repo.html_url}" target="_blank" rel="noopener" class="card-open-btn">
+              <span class="repo-link-action-btn">
                 查看
                 <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
-              </a>
+              </span>
             </div>
-          </article>`;
+          </div>
+        `;
       }).join('');
+
+      // 綁定 3D Tilt 傾斜特效至新產生的卡片上
+      reposContainer.querySelectorAll('.repository-card').forEach(card => {
+        applyTiltEffect(card);
+      });
     }
 
     /* ================================================================
-       錯誤顯示
+       資料載入失敗之 UI 顯示
        ================================================================ */
-    function showError(msg) {
+    function displayErrorUI(errorMessage) {
       reposContainer.innerHTML = `
-        <div class="status-box">
-          <svg class="status-icon" viewBox="0 0 24 24" style="fill:#E11D48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-          <h2 class="status-title">資料載入失敗</h2>
-          <p class="status-text">${msg}<br>請稍候幾分鐘再重試，或確認網路連線是否正常。</p>
-          <button class="status-btn" onclick="fetchData()">重新載入</button>
-        </div>`;
+        <div class="status-alert-box">
+          <svg class="status-alert-icon" viewBox="0 0 24 24" style="fill:#E11D48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          <h2 class="status-alert-title">連線載入失敗</h2>
+          <p class="status-alert-desc">${errorMessage}<br>請確認您的網路連線，或稍候再點擊下方按鈕重新讀取。</p>
+          <button class="status-retry-btn" onclick="fetchGitHubData()">重新載入</button>
+        </div>
+      `;
     }
 
-    // 啟動
-    fetchData();
+    // 啟動資料流程
+    fetchGitHubData();
   </script>
 </body>
 </html>
